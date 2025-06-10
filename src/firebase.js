@@ -7,13 +7,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyBMnTGNUnXdgbNV8fhiV-EApO-7lkCFtfY",
-  authDomain: "bloomboutique-project.firebaseapp.com",
-  projectId: "bloomboutique-project",
-  storageBucket: "bloomboutique-project.firebasestorage.app",
-  messagingSenderId: "456316898074",
-  appId: "1:456316898074:web:b61c7d80db643cf0da3aa3",
-  measurementId: "G-MXDBP5NY8X"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 // Inisialisasi Firebase
