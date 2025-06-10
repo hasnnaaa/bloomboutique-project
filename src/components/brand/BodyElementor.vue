@@ -16,7 +16,7 @@ export default {
   <div class="elementor">
     <div class="elementor-hero-section">
       <div class="container-gambar">
-        <img class="gambar-background" src="https://imgur.com/DhsMbcs.png" alt="background-brand">
+        <img src="@/assets/images/homepage.jpg" alt="Bunga" class="gambar-background">
         <div class="overlay-container">
           <div class="overlay">
             <h1 class="elementor-title">Toko Bunga Online dengan Sentuhan Elegan</h1>

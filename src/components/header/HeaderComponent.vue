@@ -42,7 +42,7 @@ export default {
     <div class="navbar-header">
       <div class="logo-container">
         <router-link to="/">
-            <img class="logo" src="https://imgur.com/TyLFHJz.png" alt="logo" height="30">
+            <img class="logo" src="@/assets/images/logo.png" alt="logo" height="50">
         </router-link>
       </div>
 

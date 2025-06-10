@@ -19,7 +19,7 @@ export default {
   <div class="experience-section">
     <div class="experience-container">
       <div class="image-container">
-        <img src="https://imgur.com/LyPfaXx.jpg" alt="Bunga Segar" class="experience-image">
+        <img src="@/assets/images/homepage_pilih kami.jpg" alt="Bunga Segar" class="experience-image">
       </div>
       <div class="experience-content">
         <h2 class="experience-title">Kenapa harus memilih kami</h2>

@@ -13,7 +13,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/QziV7r7.jpg" alt="mawar">
+          <img class="foto" src="@/assets/images/bunga mawar.jpg" alt="mawar">
           <h3 class="judul-card">Buket Mawar</h3>
           <div class="center">
             <p>Mawar kami tersedia dalam berbagai warna, masing-masing dengan makna unik. Dari merah yang penuh gairah, putih yang melambangkan kesucian, hingga pink yang lembut dan anggun. Cocok untuk hadiah ulang tahun, pernikahan, atau perayaan cinta lainnya.</p>
@@ -27,7 +27,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/g6zvOT8.jpg" alt="anggrek">
+          <img class="foto" src="@/assets/images/bunga anggrek.jpg" alt="anggrek">
           <h3 class="judul-card">Buket Anggrek</h3>
           <div class="center">
             <p>Bunga anggrek menghadirkan sentuhan kemewahan dan ketahanan yang luar biasa. Simbol keindahan dan kemewahan, pilihan sempurna untuk dekorasi rumah atau hadiah spesial bagi orang tersayang.</p>
@@ -41,7 +41,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/DPKI4BF.jpg" alt="lili">
+          <img class="foto" src="@/assets/images/bunga lili.jpg" alt="lili">
           <h3 class="judul-card">Buket Lili</h3>
           <div class="center">
             <p>Dengan bentuknya yang khas dan aroma lembut, bunga lili adalah pilihan elegan untuk segala acara. Sering digunakan dalam rangkaian bunga untuk melambangkan kesucian, keberuntungan, dan ketenangan.</p>
@@ -55,7 +55,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/gGUzZxe.jpg" alt="tulip">
+          <img class="foto" src="@/assets/images/bunga tulip.jpg" alt="tulip">
           <h3 class="judul-card">Buket Tulip</h3>
           <div class="center">
             <p>Bunga tulip hadir dengan warna-warna cerah yang menyegarkan. Melambangkan kebahagiaan dan awal yang baru, tulip adalah pilihan sempurna untuk hadiah di musim semi atau sebagai ungkapan kasih sayang yang manis.</p>
@@ -69,7 +69,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/hwcefny.jpg" alt="poeny">
+          <img class="foto" src="@/assets/images/bunga peony.jpg" alt="poeny">
           <h3 class="judul-card">Buket Peony</h3>
           <div class="center">
             <p>Bunga Peony melambangkan kebahagiaan, keberuntungan, dan romansa. Dengan kelopak besar yang mekar indah, Peony sering dipilih untuk dekorasi pernikahan atau hadiah eksklusif untuk orang terkasih.</p>
@@ -83,7 +83,7 @@ export default {
     <li>
       <div class="bunga-card">
         <div class="inner">
-          <img class="foto" src="https://imgur.com/P67LhyP.jpg" alt="carnation">
+          <img class="foto" src="@/assets/images/bunga carnation.jpg" alt="carnation">
           <h3 class="judul-card">Buket Carnation</h3>
           <div class="center">
             <p>Anyelir dikenal sebagai simbol kasih sayang, kekaguman, dan cinta ibu. Dengan kelopak berlapis yang indah, bunga ini sering digunakan dalam buket romantis, hadiah Hari Ibu, atau perayaan spesial lainnya.</p>
