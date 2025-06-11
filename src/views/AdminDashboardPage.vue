@@ -1,4 +1,5 @@
 <template>
+  <HeaderComponent mode="admin" />
   <div class="admin-dashboard">
     <div class="welcome-header">
       <h1>Selamat Datang Admin!</h1>
@@ -57,6 +58,7 @@
 </template>
 
 <script setup>
+import HeaderComponent from '@/components/header/HeaderComponent.vue'; // <-- TAMBAHKAN INI
 import { ref, onMounted } from 'vue';
 import { db } from '../firebase';
 import { collection, query, onSnapshot, doc, updateDoc, orderBy } from 'firebase/firestore';
@@ -135,6 +137,7 @@ onMounted(() => {
 .admin-dashboard {
   padding: 20px;
   font-family: sans-serif;
+  padding-top: 90px;
 }
 
 .welcome-header {

@@ -5,32 +5,28 @@ import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 
 export default {
   name: 'HeaderComponent',
+  props: {
+    mode: { // Kita definisikan prop 'mode'
+      type: String,
+      default: 'public' // Nilai default-nya adalah 'public'
+    }
+  },
   data() {
     return {
-      isLoggedIn: false, // anggap user belum login
+      isLoggedIn: false,
       auth: null
     };
   },
   mounted() {
     this.auth = getAuth();
     onAuthStateChanged(this.auth, (user) => {
-      // Fungsi ini akan berjalan setiap kali status login berubah
-      if (user) {
-        // User login
-        this.isLoggedIn = true;
-      } else {
-        // User logout
-        this.isLoggedIn = false;
-      }
+      this.isLoggedIn = !!user;
     });
   },
   methods: {
     handleLogout() {
       signOut(this.auth).then(() => {
-        // Arahkan ke halaman home setelah logout berhasil
         this.$router.push('/');
-      }).catch((error) => {
-        console.error('Logout error', error);
       });
     }
   }
@@ -47,12 +43,13 @@ export default {
       </div>
 
       <ul class="menu">
-        <li><router-link to="/">Home</router-link></li>
+        <template v-if="mode === 'public'">
+          <li><router-link to="/">Home</router-link></li>
+          </template>
 
         <li v-if="!isLoggedIn">
           <router-link to="/login">Login / Register</router-link>
         </li>
-
         <li v-else>
           <a @click="handleLogout" style="cursor: pointer;">Logout</a>
         </li>
