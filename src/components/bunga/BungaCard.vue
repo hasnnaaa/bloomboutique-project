@@ -19,7 +19,7 @@ export default {
             <p>Mawar kami tersedia dalam berbagai warna, masing-masing dengan makna unik. Dari merah yang penuh gairah, putih yang melambangkan kesucian, hingga pink yang lembut dan anggun. Cocok untuk hadiah ulang tahun, pernikahan, atau perayaan cinta lainnya.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Mawar' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@ export default {
             <p>Bunga anggrek menghadirkan sentuhan kemewahan dan ketahanan yang luar biasa. Simbol keindahan dan kemewahan, pilihan sempurna untuk dekorasi rumah atau hadiah spesial bagi orang tersayang.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Anggrek' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default {
             <p>Dengan bentuknya yang khas dan aroma lembut, bunga lili adalah pilihan elegan untuk segala acara. Sering digunakan dalam rangkaian bunga untuk melambangkan kesucian, keberuntungan, dan ketenangan.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Lili' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default {
             <p>Bunga tulip hadir dengan warna-warna cerah yang menyegarkan. Melambangkan kebahagiaan dan awal yang baru, tulip adalah pilihan sempurna untuk hadiah di musim semi atau sebagai ungkapan kasih sayang yang manis.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Tulip' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ export default {
             <p>Bunga Peony melambangkan kebahagiaan, keberuntungan, dan romansa. Dengan kelopak besar yang mekar indah, Peony sering dipilih untuk dekorasi pernikahan atau hadiah eksklusif untuk orang terkasih.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Peony' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ export default {
             <p>Anyelir dikenal sebagai simbol kasih sayang, kekaguman, dan cinta ibu. Dengan kelopak berlapis yang indah, bunga ini sering digunakan dalam buket romantis, hadiah Hari Ibu, atau perayaan spesial lainnya.</p>
           </div>
           <div class="foot">
-            <router-link to="/Payment" class="cta">Pesan</router-link>
+            <router-link :to="{ name: 'Payment', query: { productName: 'Buket Carnation' } }" class="cta">Pesan</router-link>
           </div>
         </div>
       </div>

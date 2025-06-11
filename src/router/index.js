@@ -6,6 +6,8 @@ import LoginPage from '../views/LoginPage.vue'
 import RegistrationPage from '../views/RegistrationPage.vue';
 import OrderSuccessPage from '../views/OrderSuccessPage.vue';
 import AdminDashboardPage from '../views/AdminDashboardPage.vue';
+import AdminProductsPage from '../views/AdminProductsPage.vue';
+import CatalogPage from '../views/CatalogPage.vue';
 
 const routes = [
   {
@@ -44,6 +46,17 @@ const routes = [
   name: 'AdminDashboard',
   component: AdminDashboardPage,
   meta: { requiresAuth: true, requiresAdmin: true } // <-- KITA TAMBAHKAN TANDA BARU
+  },
+  {
+  path: '/admin/products',
+  name: 'AdminProducts',
+  component: AdminProductsPage,
+  meta: { requiresAuth: true, requiresAdmin: true }
+  },
+  {
+  path: '/catalog',
+  name: 'Catalog',
+  component: CatalogPage
   }
 ]
 

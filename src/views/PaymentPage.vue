@@ -21,7 +21,8 @@ export default {
       isRecurring: false,
       whatsAppNumber: '',
       isLoggedIn: false,
-      user: null
+      user: null,
+      productName: ''
     };
   },
   created() {
@@ -37,6 +38,9 @@ export default {
         this.user = null;
       }
     });
+    if (this.$route.query.productName) { // <-- TAMBAHKAN BLOK INI
+    this.productName = this.$route.query.productName;
+    }
   },
   computed: {
     isFormValid() {
@@ -69,11 +73,11 @@ export default {
       this.donorPhone = '';
     },
     paymentChoice() {
-      if (this.paymentMethod === 'gopay') {
+      if (this.paymentMethod === 'GoPay') {
         this.$router.push({ name: 'GopayPayment' });
-      } else if (this.paymentMethod === 'dana') {
+      } else if (this.paymentMethod === 'DANA') {
         this.$router.push({ name: 'DanaPayment' });
-      } else if (this.paymentMethod === 'ovo') {
+      } else if (this.paymentMethod === 'OVO') {
         this.$router.push({ name: 'OvoPayment' });
       } else {
         alert('Silahkan Pilih Metode Pembayaran');
@@ -92,7 +96,8 @@ export default {
         recurring: this.isRecurring,
         orderDate: serverTimestamp(),
         userId: this.user ? this.user.uid : null,
-        status: 'pending'
+        status: 'pending',
+        productName: this.productName
       };
 
       try {
@@ -146,9 +151,9 @@ export default {
         <label>Metode Pembayaran</label>
         <select v-model="paymentMethod" @change="onPaymentMethodChange">
           <option value="">Pilih Metode Pembayaran</option>
-          <option value="gopay">GoPay</option>
-          <option value="dana">DANA</option>
-          <option value="ovo">OVO</option>
+          <option value="GoPay">GoPay</option>
+          <option value="DANA">DANA</option>
+          <option value="OVO">OVO</option>
         </select>
       </div>
 

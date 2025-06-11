@@ -11,11 +11,11 @@ export default {
         <div class="content-grid">
           <div class="content-item">
             <h3>Bunga Segar Pilihan</h3>
-            <p>Kami menyediakan bunga berkualitas tinggi yang dipetik langsung dari kebun.</p>
+            <p>Menyediakan bunga berkualitas tinggi yang dipilih secara selektif untuk memastikan kesegaran dan keindahannya.</p>
           </div>
           <div class="content-item">
             <h3>Pengiriman Cepat</h3>
-            <p>Layanan pengiriman tepat waktu ke seluruh wilayah Jakarta.</p>
+            <p>Layanan pengiriman tepat waktu ke seluruh wilayah Semarang.</p>
           </div>
           <div class="content-item">
             <h3>Desain Eksklusif</h3>

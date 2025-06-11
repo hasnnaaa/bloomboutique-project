@@ -1,64 +1,73 @@
 <template>
   <HeaderComponent mode="admin" />
-  <div class="admin-dashboard">
-    <div class="welcome-header">
-      <h1>Selamat Datang Admin!</h1>
-      <p>Kerja kerasmu hari ini menentukan kesuksesan besok. Semangat, Admin hebat.</p>
-    </div>
+  <div class="admin-layout">
 
-    <div class="orders-container">
-      <div class="order-list-card">
-        <h2>Pesanan Masuk</h2>
-        <div v-if="pendingOrders.length === 0" class="empty-state">
-          Belum ada pesanan baru.
-        </div>
-        <ul v-else>
-        <li v-for="order in pendingOrders"
-          :key="order.id"
-          class="order-item-wrapper"
-          @mouseleave="handleMouseLeave()"
-          :class="{ 'is-pinned': expandedOrderId === order.id }">
+    <AdminSidebar />
 
-        <div class="order-item clickable"
-          @mouseenter="handleMouseEnter(order.id)"
-          @click="pinDetails(order.id)">
-        <div>
-          <div class="order-name">{{ order.name }}</div>
-          <div class="order-detail">Rp {{ order.amount.toLocaleString() }} - {{ order.paymentMethod }}</div>
-        </div>
-          <button @click.stop="completeOrder(order.id)" class="complete-button" title="Tandai sebagai selesai">
-            ✓
-          </button>
-        </div>
+    <main class="main-content">
 
-        <div v-if="isDetailsVisible(order.id)" class="order-extra-details">
-        <p><strong>Email:</strong> {{ order.email }}</p>
-        <p><strong>No. WhatsApp:</strong> {{ order.whatsApp }}</p>
-        </div>
-      </li>
-      </ul>
+      <div class="welcome-header">
+        <h1>Selamat Datang Admin!</h1>
+        <p>Kerja kerasmu hari ini menentukan kesuksesan besok. Semangat, Admin hebat.</p>
       </div>
 
-      <div class="order-list-card">
-        <h2>Pesanan Selesai</h2>
-        <div v-if="completedOrders.length === 0" class="empty-state">
-          Belum ada pesanan yang diselesaikan.
+      <div class="orders-container">
+        <div class="order-list-card">
+          <h2>Pesanan Masuk</h2>
+          <div v-if="pendingOrders.length === 0" class="empty-state">
+            Belum ada pesanan baru.
+          </div>
+          <ul v-else>
+            <li v-for="order in pendingOrders"
+              :key="order.id"
+              class="order-item-wrapper"
+              @mouseleave="handleMouseLeave()"
+              :class="{ 'is-pinned': expandedOrderId === order.id }">
+
+              <div class="order-item clickable"
+                @mouseenter="handleMouseEnter(order.id)"
+                @click="pinDetails(order.id)">
+                <div>
+                  <div class="order-name">{{ order.name }}</div>
+                  <div class="order-detail">
+                    {{ order.productName || 'Produk Tidak Diketahui' }} - Rp {{ order.amount.toLocaleString() }} - {{ order.paymentMethod }}
+                  </div>
+                </div>
+                <button @click.stop="completeOrder(order.id)" class="complete-button" title="Tandai sebagai selesai">
+                  ✓
+                </button>
+              </div>
+
+              <div v-if="isDetailsVisible(order.id)" class="order-extra-details">
+                <p><strong>Email:</strong> {{ order.email }}</p>
+                <p><strong>No. WhatsApp:</strong> {{ order.whatsApp }}</p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul v-else>
-          <li v-for="order in completedOrders" :key="order.id" class="order-item completed">
-            <div>
-              <div class="order-name">{{ order.name }}</div>
-              <div class="order-detail">Rp {{ order.amount.toLocaleString() }} - {{ order.paymentMethod }}</div>
-            </div>
-          </li>
-        </ul>
+
+        <div class="order-list-card">
+          <h2>Pesanan Selesai</h2>
+          <div v-if="completedOrders.length === 0" class="empty-state">
+            Belum ada pesanan yang diselesaikan.
+          </div>
+          <ul v-else>
+            <li v-for="order in completedOrders" :key="order.id" class="order-item completed">
+              <div>
+                <div class="order-name">{{ order.name }}</div>
+                <div class="order-detail">Rp {{ order.amount.toLocaleString() }} - {{ order.paymentMethod }}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+      </main>
   </div>
 </template>
 
 <script setup>
 import HeaderComponent from '@/components/header/HeaderComponent.vue'; // <-- TAMBAHKAN INI
+import AdminSidebar from '@/components/admin/AdminSidebar.vue';
 import { ref, onMounted } from 'vue';
 import { db } from '../firebase';
 import { collection, query, onSnapshot, doc, updateDoc, orderBy } from 'firebase/firestore';
@@ -134,6 +143,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.admin-layout {
+  display: flex; /* Atur sidebar dan konten sejajar */
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 90px 30px 30px 30px; /* padding-top sesuaikan tinggi header */
+}
+
 .admin-dashboard {
   padding: 20px;
   font-family: sans-serif;
